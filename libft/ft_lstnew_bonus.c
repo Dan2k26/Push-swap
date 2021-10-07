@@ -1,26 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_pushswap.c                                      :+:      :+:    :+:   */
+/*   ft_lstnew_bonus.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dlerma-c <dlerma-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/07 18:38:41 by dlerma-c          #+#    #+#             */
-/*   Updated: 2021/10/07 19:51:10 by dlerma-c         ###   ########.fr       */
+/*   Created: 2021/08/23 15:46:16 by dlerma-c          #+#    #+#             */
+/*   Updated: 2021/08/23 20:09:53 by dlerma-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include"push_swap.h"
+#include"libft.h"
 
-int main (int argc, char **argv)
+t_list	*ft_lstnew(void *content)
 {
-	if (argc > 1)
-	{
-		if (ft_check_errors(argv, argc) == 0)
-		{
-			write(1, "OK", 2);
-		}
-	}
-	write(1, "Error", 5);
-	return (0);
+	t_list	*new;
+
+	new = malloc(sizeof(t_list));
+	if (new == NULL)
+		return (0);
+	new->content = content;
+	new->next = NULL;
+	return (new);
 }

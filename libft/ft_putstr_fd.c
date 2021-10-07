@@ -1,26 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_pushswap.c                                      :+:      :+:    :+:   */
+/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dlerma-c <dlerma-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/07 18:38:41 by dlerma-c          #+#    #+#             */
-/*   Updated: 2021/10/07 19:51:10 by dlerma-c         ###   ########.fr       */
+/*   Created: 2021/08/10 15:21:45 by dlerma-c          #+#    #+#             */
+/*   Updated: 2021/08/11 12:31:13 by dlerma-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include"push_swap.h"
+#include "libft.h"
 
-int main (int argc, char **argv)
+void	ft_putstr_fd(char *s, int fd)
 {
-	if (argc > 1)
+	int	i;
+	int	size;
+
+	i = 0;
+	if (s != NULL)
 	{
-		if (ft_check_errors(argv, argc) == 0)
+		size = ft_strlen(s);
+		while (i < size)
 		{
-			write(1, "OK", 2);
+			write(fd, &s[i], 1);
+			i++;
 		}
 	}
-	write(1, "Error", 5);
-	return (0);
 }

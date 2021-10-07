@@ -1,26 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_pushswap.c                                      :+:      :+:    :+:   */
+/*   ft_lstdelone_bonus.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dlerma-c <dlerma-c@student.42.fr>          +#+  +:+       +#+        */
+/*   By: dlerma-c <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/07 18:38:41 by dlerma-c          #+#    #+#             */
-/*   Updated: 2021/10/07 19:51:10 by dlerma-c         ###   ########.fr       */
+/*   Created: 2021/08/24 16:57:41 by dlerma-c          #+#    #+#             */
+/*   Updated: 2021/08/24 16:57:45 by dlerma-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include"push_swap.h"
+#include"libft.h"
 
-int main (int argc, char **argv)
+void	ft_lstdelone(t_list *lst, void (*del)(void*))
 {
-	if (argc > 1)
+	if (lst)
 	{
-		if (ft_check_errors(argv, argc) == 0)
-		{
-			write(1, "OK", 2);
-		}
+		(*del)(lst->content);
+		free(lst);
 	}
-	write(1, "Error", 5);
-	return (0);
 }

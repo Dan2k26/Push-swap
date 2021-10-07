@@ -1,26 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_pushswap.c                                      :+:      :+:    :+:   */
+/*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dlerma-c <dlerma-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/07 18:38:41 by dlerma-c          #+#    #+#             */
-/*   Updated: 2021/10/07 19:51:10 by dlerma-c         ###   ########.fr       */
+/*   Created: 2021/08/01 16:01:36 by dlerma-c          #+#    #+#             */
+/*   Updated: 2021/08/24 16:02:08 by dlerma-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include"push_swap.h"
+#include"libft.h"
 
-int main (int argc, char **argv)
+char	*ft_strchr(const char *s, int c)
 {
-	if (argc > 1)
+	char	*str;
+	int		i;
+
+	str = (char *)s;
+	i = 0;
+	while (str[i])
 	{
-		if (ft_check_errors(argv, argc) == 0)
-		{
-			write(1, "OK", 2);
-		}
+		if (str[i] == (char)c)
+			return (&str[i]);
+		i++;
 	}
-	write(1, "Error", 5);
-	return (0);
+	if (c == '\0')
+		return (&str[i]);
+	return (NULL);
 }

@@ -1,26 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_pushswap.c                                      :+:      :+:    :+:   */
+/*   ft_lstadd_back_bonus.c                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dlerma-c <dlerma-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/07 18:38:41 by dlerma-c          #+#    #+#             */
-/*   Updated: 2021/10/07 19:51:10 by dlerma-c         ###   ########.fr       */
+/*   Created: 2021/08/24 13:40:51 by dlerma-c          #+#    #+#             */
+/*   Updated: 2021/08/24 16:59:00 by dlerma-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include"push_swap.h"
+#include"libft.h"
 
-int main (int argc, char **argv)
+void	ft_lstadd_back(t_list **lst, t_list *new)
 {
-	if (argc > 1)
+	t_list	*aux;
+
+	if (*lst == NULL)
+		*lst = new;
+	else if (*lst)
 	{
-		if (ft_check_errors(argv, argc) == 0)
-		{
-			write(1, "OK", 2);
-		}
+		aux = ft_lstlast(*lst);
+		aux->next = new;
 	}
-	write(1, "Error", 5);
-	return (0);
 }

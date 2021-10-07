@@ -1,26 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_pushswap.c                                      :+:      :+:    :+:   */
+/*   ft_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dlerma-c <dlerma-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/07 18:38:41 by dlerma-c          #+#    #+#             */
-/*   Updated: 2021/10/07 19:51:10 by dlerma-c         ###   ########.fr       */
+/*   Created: 2021/08/10 15:20:22 by dlerma-c          #+#    #+#             */
+/*   Updated: 2021/08/11 18:01:06 by dlerma-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include"push_swap.h"
+#include"libft.h"
 
-int main (int argc, char **argv)
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
-	if (argc > 1)
+	int		i;
+	int		len;
+	char	*c;
+
+	i = 0;
+	if (s == NULL)
+		return (NULL);
+	len = ft_strlen((char *)s);
+	c = (char *)malloc(len + 1 * sizeof(char));
+	if (c == NULL)
+		return (NULL);
+	while (i < len)
 	{
-		if (ft_check_errors(argv, argc) == 0)
-		{
-			write(1, "OK", 2);
-		}
+		c[i] = f(i, s[i]);
+		i++;
 	}
-	write(1, "Error", 5);
-	return (0);
+	c[i] = '\0';
+	return (c);
 }

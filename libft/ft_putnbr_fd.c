@@ -1,26 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_pushswap.c                                      :+:      :+:    :+:   */
+/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dlerma-c <dlerma-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/07 18:38:41 by dlerma-c          #+#    #+#             */
-/*   Updated: 2021/10/07 19:51:10 by dlerma-c         ###   ########.fr       */
+/*   Created: 2021/08/11 12:30:53 by dlerma-c          #+#    #+#             */
+/*   Updated: 2021/08/11 12:31:05 by dlerma-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include"push_swap.h"
+#include "libft.h"
 
-int main (int argc, char **argv)
+void	ft_putnbr_fd(int n, int fd)
 {
-	if (argc > 1)
+	if (n == -2147483648)
 	{
-		if (ft_check_errors(argv, argc) == 0)
+		ft_putchar_fd('-', fd);
+		ft_putchar_fd('2', fd);
+		n = 147483648;
+	}
+	if (n < 0)
+	{
+		ft_putchar_fd('-', fd);
+		ft_putnbr_fd(-n, fd);
+	}
+	else
+	{
+		if (n <= 9)
+			ft_putchar_fd(n + '0', fd);
+		else
 		{
-			write(1, "OK", 2);
+			ft_putnbr_fd(n / 10, fd);
+			ft_putchar_fd(n % 10 + '0', fd);
 		}
 	}
-	write(1, "Error", 5);
-	return (0);
 }

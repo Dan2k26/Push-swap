@@ -1,26 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_pushswap.c                                      :+:      :+:    :+:   */
+/*   check_errors.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dlerma-c <dlerma-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/07 18:38:41 by dlerma-c          #+#    #+#             */
-/*   Updated: 2021/10/07 19:51:10 by dlerma-c         ###   ########.fr       */
+/*   Created: 2021/10/07 18:39:01 by dlerma-c          #+#    #+#             */
+/*   Updated: 2021/10/07 20:03:00 by dlerma-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include"push_swap.h"
 
-int main (int argc, char **argv)
+int	ft_check_errors(char **argv, int argc)
 {
-	if (argc > 1)
+	int		i;
+	char	**str;
+
+	i = 0;
+	while (i < argc)
 	{
-		if (ft_check_errors(argv, argc) == 0)
-		{
-			write(1, "OK", 2);
-		}
+		if (argv[i][0] == '.')
+			str = ft_split(argv[i], ' ');
+		printf("----> %s\n", str[1]);
+		i++;
 	}
-	write(1, "Error", 5);
-	return (0);
+	return (argc);
 }

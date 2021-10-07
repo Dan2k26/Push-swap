@@ -1,26 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_pushswap.c                                      :+:      :+:    :+:   */
+/*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dlerma-c <dlerma-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/07 18:38:41 by dlerma-c          #+#    #+#             */
-/*   Updated: 2021/10/07 19:51:10 by dlerma-c         ###   ########.fr       */
+/*   Created: 2021/10/07 18:38:50 by dlerma-c          #+#    #+#             */
+/*   Updated: 2021/10/07 19:39:17 by dlerma-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include"push_swap.h"
+#ifndef PUSH_SWAP_H
 
-int main (int argc, char **argv)
-{
-	if (argc > 1)
-	{
-		if (ft_check_errors(argv, argc) == 0)
-		{
-			write(1, "OK", 2);
-		}
-	}
-	write(1, "Error", 5);
-	return (0);
-}
+# define PUSH_SWAP_H
+#include<stdio.h>
+#include<unistd.h>
+#include"libft/libft.h"
+
+int ft_check_errors(char **argv, int argc);
+
+#endif

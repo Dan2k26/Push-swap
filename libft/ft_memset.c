@@ -1,26 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_pushswap.c                                      :+:      :+:    :+:   */
+/*   ft_memset.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dlerma-c <dlerma-c@student.42.fr>          +#+  +:+       +#+        */
+/*   By: dlerma-c <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/07 18:38:41 by dlerma-c          #+#    #+#             */
-/*   Updated: 2021/10/07 19:51:10 by dlerma-c         ###   ########.fr       */
+/*   Created: 2021/07/29 11:12:12 by dlerma-c          #+#    #+#             */
+/*   Updated: 2021/07/29 11:12:17 by dlerma-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include"push_swap.h"
+#include"libft.h"
 
-int main (int argc, char **argv)
+void	*ft_memset(void *b, int c, size_t len)
 {
-	if (argc > 1)
-	{
-		if (ft_check_errors(argv, argc) == 0)
-		{
-			write(1, "OK", 2);
-		}
-	}
-	write(1, "Error", 5);
-	return (0);
+	unsigned int		num;
+	unsigned int		i;
+	char				*str;
+
+	i = -1;
+	num = sizeof(b);
+	str = b;
+	while (++i < len)
+		str[i] = c;
+	return (b);
 }
