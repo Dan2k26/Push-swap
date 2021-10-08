@@ -40,15 +40,19 @@ int	ft_check_errors(char **argv, int argc)
 	while (i < argc)
 	{
 		if (ft_strchr(argv[i], ' ') != NULL)
+		{
 			str = ft_split(argv[i], ' ');
+		}
 		while (str[y])
 		{
 			printf("%d----> %s\n", y, str[y]);
+			free(str[y]);
 			y++;
 		}
 		if (check_numbers(argv[i]) == 0)
 			printf("lol\n");
 		i++;
 	}
+	free(str);
 	return (argc);
 }
