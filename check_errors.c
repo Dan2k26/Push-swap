@@ -6,7 +6,7 @@
 /*   By: dlerma-c <dlerma-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/07 18:39:01 by dlerma-c          #+#    #+#             */
-/*   Updated: 2021/10/07 20:03:00 by dlerma-c         ###   ########.fr       */
+/*   Updated: 2021/10/08 18:47:43 by dlerma-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,21 +14,14 @@
 
 static int	check_numbers(char *str)
 {
-	int		y;
+	int		i;
 	char	**split;
 
-	y = 0;
+	i = 0;
 	split = ft_split(str, ' ');
-	while (str[y])
-	{
-		if (ft_atoi(str[y]) == 0)
-		{
-			//return (0);
-			printf("--------------%d\n", ft_atoi(str[y]));
-		}
-		y++;
-	}
-	return (1);
+	while (split[i])
+		i++;
+	return (i);
 }
 
 static void	*union_argv(char *argv, char **str)
@@ -45,19 +38,39 @@ static void	*union_argv(char *argv, char **str)
 	return (0);
 }
 
+static void	back_free(char **str)
+{
+	int	i;
+
+	i = 0;
+	while (*str)
+	{
+		free(*str);
+		str++;
+	}
+}
+
 int	ft_check_errors(char **argv, int argc)
 {
 	int		i;
+	int		nbr;
+	char	**split;
 	char	*str;
+
 	str = ft_strdup(argv[1]);
-//empiezo 2 por el ./push_swap  y porque el primero ya lo hemos asignado
 	i = 2;
 	while (i < argc)
 	{
 		union_argv(argv[i], &str);
-		if (check_numbers(argv[i]) == 0)
-			printf("lol\n");
 		i++;
+	}
+	split = ft_split(str, ' ');
+	printf("-----NUM     %zd\n", ft_strlen(*split));
+	nbr = check_numbers(str);
+	if (nbr == 0)
+	{
+		back_free(&str);
+		return (0);
 	}
 	free(str);
 	return (argc);
