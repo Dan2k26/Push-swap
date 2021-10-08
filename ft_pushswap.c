@@ -16,11 +16,13 @@ int main (int argc, char **argv)
 {
 	if (argc > 1)
 	{
-		if (ft_check_errors(argv, argc) == 0)
+		if (ft_check_errors(argv, argc) != 0)
 		{
 			write(1, "OK", 2);
 		}
 	}
 	write(1, "Error", 5);
+	printf("\n");
+	system("leaks push_swap\n");
 	return (0);
 }

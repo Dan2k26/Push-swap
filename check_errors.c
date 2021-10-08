@@ -12,17 +12,42 @@
 
 #include"push_swap.h"
 
+static int	check_numbers(char *argv)
+{
+	int		y;
+	//char	**str;
+
+	y = 0;
+	while (argv[y])
+	{
+		if (ft_isdigit(argv[y]) == 0)
+		{
+						//return (0);
+		}
+		y++;
+	}
+	return (1);
+}
+
 int	ft_check_errors(char **argv, int argc)
 {
 	int		i;
 	char	**str;
-
-	i = 0;
+	int		y;
+//empiezo a 1 por el ./push_swap
+	i = 1;
+	y = 0;
 	while (i < argc)
 	{
-		if (argv[i][0] == '.')
+		if (ft_strchr(argv[i], ' ') != NULL)
 			str = ft_split(argv[i], ' ');
-		printf("----> %s\n", str[1]);
+		while (str[y])
+		{
+			printf("%d----> %s\n", y, str[y]);
+			y++;
+		}
+		if (check_numbers(argv[i]) == 0)
+			printf("lol\n");
 		i++;
 	}
 	return (argc);
