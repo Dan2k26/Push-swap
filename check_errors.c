@@ -12,43 +12,49 @@
 
 #include"push_swap.h"
 
-static int	check_numbers(char *argv)
+static int	check_numbers(char *str)
 {
 	int		y;
-	//char	**str;
+	char	**split;
 
 	y = 0;
-	while (argv[y])
+	split = ft_split(str, ' ');
+	while (str[y])
 	{
-		if (ft_isdigit(argv[y]) == 0)
+		if (ft_atoi(str[y]) == 0)
 		{
-						//return (0);
+			//return (0);
+			printf("--------------%d\n", ft_atoi(str[y]));
 		}
 		y++;
 	}
 	return (1);
 }
 
+static void	*union_argv(char *argv, char **str)
+{
+	char	*aux;
+
+	aux = *str;
+	*str = ft_strjoin(aux, " ");
+	free(aux);
+	aux = *str;
+	*str = ft_strjoin(aux, argv);
+	printf("----> %s\n", *str);
+	free(aux);
+	return (0);
+}
+
 int	ft_check_errors(char **argv, int argc)
 {
 	int		i;
-	char	**str;
-	int		y;
-//empiezo a 1 por el ./push_swap
-	i = 1;
-	y = 0;
+	char	*str;
+	str = ft_strdup(argv[1]);
+//empiezo 2 por el ./push_swap  y porque el primero ya lo hemos asignado
+	i = 2;
 	while (i < argc)
 	{
-		if (ft_strchr(argv[i], ' ') != NULL)
-		{
-			str = ft_split(argv[i], ' ');
-		}
-		while (str[y])
-		{
-			printf("%d----> %s\n", y, str[y]);
-			free(str[y]);
-			y++;
-		}
+		union_argv(argv[i], &str);
 		if (check_numbers(argv[i]) == 0)
 			printf("lol\n");
 		i++;
