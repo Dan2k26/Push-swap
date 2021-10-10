@@ -1,0 +1,19 @@
+#include"push_swap.h"
+#include <errno.h>
+
+int main () {
+   char str[] = "203030054877788458854885848747 This is test";
+   char *ptr;
+   long ret;
+
+   ret = strtol(str, &ptr, 10);
+   if (errno != 0)
+   {
+	   //perror(NULL);
+		return(0);
+   }
+   printf("The number(unsigned long integer) is %ld\n", ret);
+   printf("String part is |%s|", ptr);
+
+   return(0);
+}

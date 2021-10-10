@@ -1,6 +1,6 @@
 NAME = push_swap
 
-SRCS = ft_pushswap.c check_errors.c
+SRCS = ft_pushswap.c check_errors.c atoi_update.c start_shorting.c
 #Direccion de la Libft
 FILE_DIR = libft
 
@@ -8,7 +8,7 @@ OBJS = $(SRCS:.c=.o)
 
 CC = gcc
 
-CFLAGS = -Wall -Werror -Wextra #-fsanitize=address -g3
+CFLAGS = -Wall -Werror -Wextra -g3 -fsanitize=address 
 
 all: $(NAME)
 

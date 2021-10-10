@@ -1,22 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr.c                                        :+:      :+:    :+:   */
+/*   ft_free_malloc.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dlerma-c <dlerma-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/09/14 20:53:43 by dlerma-c          #+#    #+#             */
-/*   Updated: 2021/09/15 17:01:31 by dlerma-c         ###   ########.fr       */
+/*   Created: 2021/10/10 19:33:51 by dlerma-c          #+#    #+#             */
+/*   Updated: 2021/10/10 19:34:40 by dlerma-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include"libft.h"
 
-void	ft_putstr(char *str)
+char	**ft_free_malloc(char **str)
 {
-	while (str && *str != '\0')
+	int	i;
+
+	i = 0;
+	while (str[i])
 	{
-		write(1, str, 1);
-		str++;
+		free(str[i]);
+		i++;
 	}
+	free(str);
+	return (NULL);
 }
