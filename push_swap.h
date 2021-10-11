@@ -6,7 +6,7 @@
 /*   By: dlerma-c <dlerma-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/07 18:38:50 by dlerma-c          #+#    #+#             */
-/*   Updated: 2021/10/11 15:09:35 by dlerma-c         ###   ########.fr       */
+/*   Updated: 2021/10/11 19:11:29 by dlerma-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,12 @@
 # include<stdio.h>
 # include<unistd.h>
 # include"libft/libft.h"
+
+typedef struct s_numbers
+{
+	int			num;
+	t_numbers	next;
+}	t_numbers;
 
 int		ft_check_errors(char **argv, int argc);
 long	atoi_update(const char *str);

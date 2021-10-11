@@ -6,7 +6,7 @@
 /*   By: dlerma-c <dlerma-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/07 18:39:01 by dlerma-c          #+#    #+#             */
-/*   Updated: 2021/10/11 16:07:59 by dlerma-c         ###   ########.fr       */
+/*   Updated: 2021/10/11 18:01:57 by dlerma-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,8 +30,12 @@ static int	check_numbers(char **split)
 	if (nbrs == NULL)
 		return (0);
 	y = -1;
+	printf("----->%d\n", i);
 	while (++y < i)
+	{
 		nbrs[y] = ft_atoi(split[y]);
+		printf("->NBRS(%d) %d\n", i, nbrs[i]);
+	}
 	if (duplicate_numbers(i, nbrs) == -1)
 	{
 		free(nbrs);

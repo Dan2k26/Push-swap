@@ -6,7 +6,7 @@
 /*   By: dlerma-c <dlerma-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/11 15:17:32 by dlerma-c          #+#    #+#             */
-/*   Updated: 2021/10/11 16:26:32 by dlerma-c         ###   ########.fr       */
+/*   Updated: 2021/10/11 17:57:59 by dlerma-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,7 @@ static int	*create_numbers(int argc, char **argv, int num)
 	while (i < num)
 	{
 		nbrs[i] = ft_atoi(split[i]);
+		printf("->NBRS(%d) %d\n", i, nbrs[i]);
 		i++;
 	}
 	ft_free_malloc(split);
@@ -41,7 +42,6 @@ int	start_shorting(int argc, char **argv, int num)
 	int		*nbrs;
 
 	nbrs = create_numbers(argc, argv, num);
-
 	free (nbrs);	
 	return (0);
 }
