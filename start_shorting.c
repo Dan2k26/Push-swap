@@ -1,12 +1,25 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   start_shorting.c                                   :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: dlerma-c <dlerma-c@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/10/11 15:17:32 by dlerma-c          #+#    #+#             */
+/*   Updated: 2021/10/11 16:26:32 by dlerma-c         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include"push_swap.h"
 //num numero de numeros que hay
-int	start_shorting(int argc, char **argv, int num)
+
+static int	*create_numbers(int argc, char **argv, int num)
 {
 	char	*str;
-	int		i;
 	char	**split;
 	int		*nbrs;
-	//comprobar duplicados
+	int i;
+
 	str = union_argv(argv, argc);
 	split = ft_split(str, ' ');
 	nbrs = ft_calloc(num, sizeof(int));
@@ -20,5 +33,15 @@ int	start_shorting(int argc, char **argv, int num)
 	}
 	ft_free_malloc(split);
 	free(str);
+	return (nbrs);
+}
+
+int	start_shorting(int argc, char **argv, int num)
+{
+	int		*nbrs;
+
+	nbrs = create_numbers(argc, argv, num);
+
+	free (nbrs);	
 	return (0);
 }

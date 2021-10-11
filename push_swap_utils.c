@@ -1,36 +1,54 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_pushswap.c                                      :+:      :+:    :+:   */
+/*   push_swap_utils.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dlerma-c <dlerma-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/07 18:38:41 by dlerma-c          #+#    #+#             */
-/*   Updated: 2021/10/11 16:24:14 by dlerma-c         ###   ########.fr       */
+/*   Created: 2021/10/11 15:03:08 by dlerma-c          #+#    #+#             */
+/*   Updated: 2021/10/11 15:58:54 by dlerma-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include"push_swap.h"
 
-int	main(int argc, char **argv)
+int	duplicate_numbers(int num, int *nbrs)
 {
-	int	num;
+	int	i;
+	int	y;
 
-	if (argc > 1)
+	i = 0;
+	while (i < num)
 	{
-		num = ft_check_errors(argv, argc);
-		if (num > 0)
+		y = 0;
+		while (y < num)
 		{
-			num = start_shorting(argc, argv, num);
-			write(1, "OK", 2);
-			system("leaks push_swap\n");
-			return (0);
+			if (y != i && nbrs[i] == nbrs[y])
+				return (-1);
+			y++;
 		}
-		//num duplicado, texto no numerico, > MAXINT
-		if (num == -1)
-			write(1, "Error", 5);
+		i++;
 	}
-	//solo un numero, nada numeros ordenados
-	system("leaks push_swap\n");
 	return (0);
+}
+
+char	*union_argv(char **argv, int argc)
+{
+	char	*aux;
+	int		i;
+	char	*str;
+
+	str = ft_strdup(argv[1]);
+	i = 2;
+	while (i < argc)
+	{
+		aux = str;
+		str = ft_strjoin(aux, " ");
+		free(aux);
+		aux = str;
+		str = ft_strjoin(aux, argv[i]);
+		free(aux);
+		i++;
+	}
+	return (str);
 }

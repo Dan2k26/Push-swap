@@ -6,7 +6,7 @@
 /*   By: dlerma-c <dlerma-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/10 21:41:14 by dlerma-c          #+#    #+#             */
-/*   Updated: 2021/10/10 23:21:20 by dlerma-c         ###   ########.fr       */
+/*   Updated: 2021/10/11 15:16:42 by dlerma-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,9 +33,9 @@ static long	check_alpha(const char *str, int pos, long result)
 
 	while (str[pos])
 	{
-		num = ft_isalpha(str[pos]);
-		if (num == 1)
-			return ((long)MAX_INT + 1);
+		num = ft_isdigit(str[pos]);
+		if (num == 0)
+			return ((long)MAX_INT + 2);
 		pos++;
 	}
 	return (result);
