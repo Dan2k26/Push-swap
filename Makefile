@@ -1,7 +1,7 @@
 NAME = push_swap
 
 SRCS = ft_pushswap.c check_errors.c atoi_update.c start_shorting.c \
-		push_swap_utils.c
+		push_swap_utils.c show_stack.c
 #Direccion de la Libft
 FILE_DIR = libft
 
