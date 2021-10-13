@@ -6,7 +6,7 @@
 /*   By: dlerma-c <dlerma-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/07 18:38:41 by dlerma-c          #+#    #+#             */
-/*   Updated: 2021/10/13 16:52:53 by dlerma-c         ###   ########.fr       */
+/*   Updated: 2021/10/13 18:08:16 by dlerma-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,6 @@ int	main(int argc, char **argv)
 			write(1, "Error\n", 6);
 	}
 	//solo un numero, nada numeros ordenados
-	system("leaks push_swap\n");
+	system("leaks -q push_swap\n");
 	return (0);
 }

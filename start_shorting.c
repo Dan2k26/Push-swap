@@ -6,42 +6,36 @@
 /*   By: dlerma-c <dlerma-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/11 15:17:32 by dlerma-c          #+#    #+#             */
-/*   Updated: 2021/10/13 17:56:31 by dlerma-c         ###   ########.fr       */
+/*   Updated: 2021/10/13 20:22:09 by dlerma-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include"push_swap.h"
 
-static int	*positive_numbers(int *nbr, int num)
+static int *positive_numbers(int *nbr, int *n, int num)
 {
 	int	i;
-	int	min;
-	int	*n;
+	int	max;
 
 	i = 0;
-	min = 0;
-	n = ft_calloc(sizeof(int), num + 1);
-	if (n == NULL)
-		return (NULL);
+	i = 0;
+	max = 0;
 	while (i < num)
 	{
-		if (nbr[min] > nbr[i])
+		if (nbr[max] < nbr[i])
 		{
-			//n[i] = 1;
-			min = i;
-			//printf("%d\n", min);
-		}
-		//printf("-------> N(%d) %d\n", i, n[i]);
+			max = i;
+			break;
+		}		
 		i++;
+		printf("->%d\n", num);
 	}
-	n[min] = 1;
-	while (i > 0)
-	{
-		i--;
-		printf("-------> N(%d) %d\n", i, n[i]);
-	}
-	printf("-------> MIN(%d): %d\n", min, nbr[min]);
-	return (0);
+	n[max] = num;
+	printf("-------> N(%d): %d\n", num, n[max]);
+	if ( num != 0)
+		return(positive_numbers(nbr, n, num - 1));
+	else 
+		return (n);
 }
 
 static int	*create_numbers(int argc, char **argv, int num)
@@ -70,10 +64,21 @@ static int	*create_numbers(int argc, char **argv, int num)
 int	start_shorting(int argc, char **argv, int num)
 {
 	int		*nbrs;
+	int		*n;
+	int		i;
 
+	i = 0;
 	nbrs = create_numbers(argc, argv, num);
 	show_stack(nbrs, num);
-	positive_numbers(nbrs, num);
+	n = (int *)ft_calloc(sizeof(int), num + 1);
+	if (n == NULL)
+		return (0);
+	n = positive_numbers(nbrs, n, num);
+	while (i < num)
+	{
+		printf("-> N(%d) %d\n", i, n[i]);
+		i++;
+	}
 	free (nbrs);
 	return (0);
 }
