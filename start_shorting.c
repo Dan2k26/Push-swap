@@ -6,7 +6,7 @@
 /*   By: dlerma-c <dlerma-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/11 15:17:32 by dlerma-c          #+#    #+#             */
-/*   Updated: 2021/10/13 20:22:09 by dlerma-c         ###   ########.fr       */
+/*   Updated: 2021/10/14 19:56:46 by dlerma-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,27 +15,26 @@
 static int *positive_numbers(int *nbr, int *n, int num)
 {
 	int	i;
-	int	max;
+	int	y;
+	int	cont;
 
 	i = 0;
-	i = 0;
-	max = 0;
+	printf("->num %d\n", num);
 	while (i < num)
 	{
-		if (nbr[max] < nbr[i])
+		cont = 0;
+		y = 0;
+		while (y < num)
 		{
-			max = i;
-			break;
-		}		
+			if (nbr[i] > nbr[y])
+				cont++;
+			y++;
+		}
+		n[i] = cont;
+		printf("-------> N(%d): %d\n", i, n[i]);
 		i++;
-		printf("->%d\n", num);
 	}
-	n[max] = num;
-	printf("-------> N(%d): %d\n", num, n[max]);
-	if ( num != 0)
-		return(positive_numbers(nbr, n, num - 1));
-	else 
-		return (n);
+	return (n);
 }
 
 static int	*create_numbers(int argc, char **argv, int num)
@@ -76,7 +75,7 @@ int	start_shorting(int argc, char **argv, int num)
 	n = positive_numbers(nbrs, n, num);
 	while (i < num)
 	{
-		printf("-> N(%d) %d\n", i, n[i]);
+		printf("-> N(%d) %d   %d\n", i, n[i], nbrs[i]);
 		i++;
 	}
 	free (nbrs);
