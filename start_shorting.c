@@ -6,23 +6,22 @@
 /*   By: dlerma-c <dlerma-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/11 15:17:32 by dlerma-c          #+#    #+#             */
-/*   Updated: 2021/10/14 19:56:46 by dlerma-c         ###   ########.fr       */
+/*   Updated: 2021/10/16 02:52:06 by dlerma-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include"push_swap.h"
 
-static int *positive_numbers(int *nbr, int *n, int num)
+static int	*positive_numbers(int *nbr, int *n, int num)
 {
 	int	i;
 	int	y;
 	int	cont;
 
 	i = 0;
-	printf("->num %d\n", num);
 	while (i < num)
 	{
-		cont = 0;
+		cont = 1;
 		y = 0;
 		while (y < num)
 		{
@@ -31,7 +30,6 @@ static int *positive_numbers(int *nbr, int *n, int num)
 			y++;
 		}
 		n[i] = cont;
-		printf("-------> N(%d): %d\n", i, n[i]);
 		i++;
 	}
 	return (n);
@@ -60,24 +58,43 @@ static int	*create_numbers(int argc, char **argv, int num)
 	return (nbrs);
 }
 
+static int	*create_stack_b(int num)
+{
+	int	*nb;
+	int	i;
+
+	nb = ft_calloc(num + 1, sizeof(int));
+	if (nb == NULL)
+		return (NULL);
+	i = 0;
+	while (i < num)
+	{
+		nb[i] = -1;
+		i++;
+	}
+	return (nb);
+}
+
 int	start_shorting(int argc, char **argv, int num)
 {
 	int		*nbrs;
-	int		*n;
+	int		*nb;
+	int		*na;
 	int		i;
 
 	i = 0;
 	nbrs = create_numbers(argc, argv, num);
-	show_stack(nbrs, num);
-	n = (int *)ft_calloc(sizeof(int), num + 1);
-	if (n == NULL)
+	show_stack_A(nbrs, num, "NUMEROS USUARIO");
+	na = ft_calloc(sizeof(int), num + 1);
+	if (na == NULL)
 		return (0);
-	n = positive_numbers(nbrs, n, num);
-	while (i < num)
-	{
-		printf("-> N(%d) %d   %d\n", i, n[i], nbrs[i]);
-		i++;
-	}
+	na = positive_numbers(nbrs, na, num);
+	show_stack_A(na, num, "NUMEROS MAPEADOS");
+	nb = create_stack_b(num);
+	show_stack_B(nb, num, "NUMEROS STACK B");
+	types_of_shorting(&na, &nb, num);
+	free(na);
+	free(nb);
 	free (nbrs);
 	return (0);
 }
