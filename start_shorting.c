@@ -6,7 +6,7 @@
 /*   By: dlerma-c <dlerma-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/11 15:17:32 by dlerma-c          #+#    #+#             */
-/*   Updated: 2021/10/16 02:52:06 by dlerma-c         ###   ########.fr       */
+/*   Updated: 2021/10/20 18:58:33 by dlerma-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,29 +58,12 @@ static int	*create_numbers(int argc, char **argv, int num)
 	return (nbrs);
 }
 
-static int	*create_stack_b(int num)
-{
-	int	*nb;
-	int	i;
-
-	nb = ft_calloc(num + 1, sizeof(int));
-	if (nb == NULL)
-		return (NULL);
-	i = 0;
-	while (i < num)
-	{
-		nb[i] = -1;
-		i++;
-	}
-	return (nb);
-}
-
 int	start_shorting(int argc, char **argv, int num)
 {
-	int		*nbrs;
-	int		*nb;
-	int		*na;
-	int		i;
+	int			*nbrs;
+	int			*na;
+	t_list	*stack_a;
+	int			i;
 
 	i = 0;
 	nbrs = create_numbers(argc, argv, num);
@@ -90,11 +73,10 @@ int	start_shorting(int argc, char **argv, int num)
 		return (0);
 	na = positive_numbers(nbrs, na, num);
 	show_stack_A(na, num, "NUMEROS MAPEADOS");
-	nb = create_stack_b(num);
-	show_stack_B(nb, num, "NUMEROS STACK B");
-	types_of_shorting(&na, &nb, num);
+	stack_a = make_lists(na, num);
+	show_list(stack_a, "STACK A");
+	//types_of_shorting(na, num);
 	free(na);
-	free(nb);
 	free (nbrs);
 	return (0);
 }

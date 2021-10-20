@@ -1,5 +1,15 @@
 #include"push_swap.h"
 
+void	show_list(t_list *lst, char *msg)
+{
+	printf("%s\n", msg);
+	while (lst != NULL)
+	{
+		printf("DIRECTION: %p\nData: %d\nNext node: %p\n\n",&lst->content, lst->content, lst->next);
+		lst = lst->next;
+	}
+}
+
 void	show_stack_B(int *nbrb, int num, char *msg)
 {
 	int	i;

@@ -1,7 +1,8 @@
 NAME = push_swap
 
 SRCS = ft_pushswap.c check_errors.c atoi_update.c start_shorting.c \
-		push_swap_utils.c show_stack.c types_of_shorting.c rules.c
+		push_swap_utils.c show_stack.c types_of_shorting.c rules.c \
+		make_lists.c
 #Direccion de la Libft
 FILE_DIR = libft
 
@@ -15,7 +16,7 @@ all: $(NAME)
 
 $(NAME): $(OBJS)
 #libft
-	cd $(FILE_DIR) && $(MAKE)
+	cd $(FILE_DIR) && $(MAKE) && $(MAKE) bonus
 #push swap
 	$(CC) $(CFLAGS) $(OBJS) $(FILE_DIR)/libft.a -o $(NAME)
 
