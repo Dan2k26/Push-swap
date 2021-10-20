@@ -6,30 +6,24 @@
 /*   By: dlerma-c <dlerma-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/16 01:05:45 by dlerma-c          #+#    #+#             */
-/*   Updated: 2021/10/16 02:47:13 by dlerma-c         ###   ########.fr       */
+/*   Updated: 2021/10/20 20:02:02 by dlerma-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include"push_swap.h"
 
-void	*ft_ra(int **na, int **nb, int num)
+void	ft_ra(t_list **stack_a, t_list **stack_b, int num)
 {
-	int	aux;
-	int i;
+	t_list	*temp;
 
-	(void)nb;
-
-	aux = *na[0];
-	i = 1;
-	show_stack_A(*na, num, "SHORTING ---> RA (BEFORE)");
-	printf("--->AUX: %d\n", aux);
-	printf("--->NA: %d\n", *na[1]);
-	while (i < num)
+	temp = *stack_a;
+	while (temp->next != NULL)
 	{
-		*na[i - 1] = *na[i];
-		printf("--->NUm: %d\n", i);
-		i++;
+		temp = temp->next;
 	}
-	show_stack_A(*na, num, "SHORTING ---> RA (AFTER)");
-	return (0);
+	show_list(temp, "TEEEMP");
+	(void) stack_b;
+	(void) num;
+	show_stack_list_data(*stack_a, "STACK A RA");
+
 }

@@ -6,24 +6,17 @@
 /*   By: dlerma-c <dlerma-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/15 21:52:50 by dlerma-c          #+#    #+#             */
-/*   Updated: 2021/10/20 14:33:56 by dlerma-c         ###   ########.fr       */
+/*   Updated: 2021/10/20 19:30:18 by dlerma-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include"push_swap.h"
 
-// static void	two_shorting(t_numbers **na, t_numbers **nb, int num)
-// {
-	
-// }
+void	types_of_shorting(t_list **stack_a, int num)
+{
+	t_list  *copy;
 
-// void	types_of_shorting(int *na, int num)
-// {
-// 	t_numbers	*list;
-// 	t_numbers	*temp;
-
-// 	list = NULL;
-// 	temp = NULL;
-// 	if (num == 2)
-// 		two_shorting(list, temp, num);
-// }
+	copy = *stack_a;
+	//if (num == 2)
+		ft_ra(stack_a, NULL, num);
+}

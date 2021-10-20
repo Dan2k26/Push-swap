@@ -6,7 +6,7 @@
 /*   By: dlerma-c <dlerma-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/11 15:17:32 by dlerma-c          #+#    #+#             */
-/*   Updated: 2021/10/20 18:58:33 by dlerma-c         ###   ########.fr       */
+/*   Updated: 2021/10/20 19:20:24 by dlerma-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,8 +74,7 @@ int	start_shorting(int argc, char **argv, int num)
 	na = positive_numbers(nbrs, na, num);
 	show_stack_A(na, num, "NUMEROS MAPEADOS");
 	stack_a = make_lists(na, num);
-	show_list(stack_a, "STACK A");
-	//types_of_shorting(na, num);
+	types_of_shorting(&stack_a, num);
 	free(na);
 	free (nbrs);
 	return (0);

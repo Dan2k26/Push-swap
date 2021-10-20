@@ -6,7 +6,7 @@
 /*   By: dlerma-c <dlerma-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/07 18:38:50 by dlerma-c          #+#    #+#             */
-/*   Updated: 2021/10/20 18:55:05 by dlerma-c         ###   ########.fr       */
+/*   Updated: 2021/10/20 19:26:50 by dlerma-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,16 +25,17 @@
 int			ft_check_errors(char **argv, int argc);
 long		atoi_update(const char *str);
 int			start_shorting(int argc, char **argv, int num);
-void		types_of_shorting(int *na, int num);
+void	    types_of_shorting(t_list **stack_a, int num);
 //utils
 int			duplicate_numbers(int num, int *nbrs);
 char		*union_argv(char **argv, int argc);
 //rules
-void		*ft_ra(int **na, int **nb, int num);
+void	ft_ra(t_list **stack_a, t_list **stack_b, int num);
 //show slack
 void		show_stack_A(int *nbra, int num, char *msg);
 void		show_stack_B(int *nbrb, int num, char *msg);
 void	    show_list(t_list *lst, char *msg);
+void        show_stack_list_data(t_list	*lst, char *msg);
 //Make lists
 t_list		*make_lists(int *nbr, int len);
 

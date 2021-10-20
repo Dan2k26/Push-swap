@@ -2,7 +2,7 @@
 
 void	show_list(t_list *lst, char *msg)
 {
-	printf("%s\n", msg);
+	printf("%s\n\n", msg);
 	while (lst != NULL)
 	{
 		printf("DIRECTION: %p\nData: %d\nNext node: %p\n\n",&lst->content, lst->content, lst->next);
@@ -10,6 +10,18 @@ void	show_list(t_list *lst, char *msg)
 	}
 }
 
+void	show_stack_list_data(t_list	*lst, char *msg)
+{
+	printf("\n%s\n\n", msg);
+	printf("LIST ||");
+	while (lst != NULL)
+	{
+		printf(" %d",lst->content);
+		lst = lst->next;
+	}
+	printf("||\n\n");
+}
+ 
 void	show_stack_B(int *nbrb, int num, char *msg)
 {
 	int	i;
@@ -22,7 +34,7 @@ void	show_stack_B(int *nbrb, int num, char *msg)
 		printf("%d ", nbrb[i]);
 		i++;
 	}
-	printf("||\n");
+	printf("||\n\n");
 }
 
 void	show_stack_A(int *nbra, int num, char *msg)
