@@ -27,7 +27,7 @@ void	show_stack_list_data(t_list	*lst, int num, char *msg)
 		lst = lst->next;
 		i++;
 	}
-	printf("||\n\n");
+	printf(" ||\n\n");
 }
  
 void	show_stack_B(int *nbrb, int num, char *msg)

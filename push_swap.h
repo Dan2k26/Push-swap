@@ -6,7 +6,7 @@
 /*   By: dlerma-c <dlerma-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/07 18:38:50 by dlerma-c          #+#    #+#             */
-/*   Updated: 2021/10/21 19:47:58 by dlerma-c         ###   ########.fr       */
+/*   Updated: 2021/10/23 20:32:39 by dlerma-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,12 +25,13 @@
 int			ft_check_errors(char **argv, int argc);
 long		atoi_update(const char *str);
 int			start_shorting(int argc, char **argv, int num);
-void	    types_of_shorting(t_list **stack_a, int num);
+void		types_of_shorting(t_list *stack_a, int num);
 //utils
 int			duplicate_numbers(int num, int *nbrs);
 char		*union_argv(char **argv, int argc);
 //rules
-t_list		*ft_rrotate_down(t_list **stack, int num);
+void        ft_rrotate_down(t_list **stack, int num, int type);
+void        ft_rrotate_all(t_list **stack_a, t_list **stack_b, int num);
 //show slack
 void		show_stack_A(int *nbra, int num, char *msg);
 void		show_stack_B(int *nbrb, int num, char *msg);
