@@ -6,7 +6,7 @@
 /*   By: dlerma-c <dlerma-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/15 21:52:50 by dlerma-c          #+#    #+#             */
-/*   Updated: 2021/10/24 18:36:13 by dlerma-c         ###   ########.fr       */
+/*   Updated: 2021/10/24 19:06:10 by dlerma-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,19 +16,19 @@ static void	ft_3sort(t_list **stack, int num)
 {
 	t_list	*temp;
 	t_list	*aux;
-	int		cont;
+	int		i;
 
 	temp = *stack;
 	aux = NULL;
-	cont = 0;
+	i = 0;
 	if (is_sorted(stack, num) == 0)
 		exit(0);
 	if (temp->content > temp->next->content)
-		ft_swap(&temp, num, 0);
-	if (temp->next->content > temp->next->next->content)
-		ft_swap(&temp->next, num, 0);
-	if (temp->content > temp->next->content)
-		ft_swap(&temp, num, 0);
+		ft_swap(stack, num, 0);
+	if (temp->content > temp->next->next->content)
+		ft_rrotate_down(stack, num, 0);	
+	i++;
+	
 }
 
 static void	ft_2sort(t_list **stack, int num)
@@ -47,13 +47,6 @@ void	types_of_sorting(t_list *stack_a, int num)
 	t_list	*stack_b;
 
 	stack_b = NULL;
-	// ft_rrotate_all(&stack_a, &stack_b, num);	
-	// show_stack_list_data(stack_a, num, "STACK RRA");
-	// ft_rotate_all(&stack_a, &stack_b, num);
-	// show_stack_list_data(stack_a, num, "STACK RA");
-	// ft_swap_all(&stack_a, &stack_b, num);
-	// show_stack_list_data(stack_a, num, "STACK SA");
-	//ft_push(&stack_a, &stack_b, num, 1);
 	if (num == 2)
 		ft_2sort(&stack_a, num);
 	if (num == 3)

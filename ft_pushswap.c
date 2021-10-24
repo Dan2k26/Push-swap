@@ -6,7 +6,7 @@
 /*   By: dlerma-c <dlerma-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/07 18:38:41 by dlerma-c          #+#    #+#             */
-/*   Updated: 2021/10/24 17:24:52 by dlerma-c         ###   ########.fr       */
+/*   Updated: 2021/10/24 19:02:59 by dlerma-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ int	main(int argc, char **argv)
 		{
 			num = start_sorting(argc, argv, num);
 			write(1, "OK\n", 3);
+			//leaks
 			//system("leaks -q push_swap\n");
 			return (0);
 		}
