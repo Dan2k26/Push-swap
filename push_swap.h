@@ -6,7 +6,7 @@
 /*   By: dlerma-c <dlerma-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/07 18:38:50 by dlerma-c          #+#    #+#             */
-/*   Updated: 2021/10/23 20:32:39 by dlerma-c         ###   ########.fr       */
+/*   Updated: 2021/10/24 02:24:36 by dlerma-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,8 +30,13 @@ void		types_of_shorting(t_list *stack_a, int num);
 int			duplicate_numbers(int num, int *nbrs);
 char		*union_argv(char **argv, int argc);
 //rules
-void        ft_rrotate_down(t_list **stack, int num, int type);
-void        ft_rrotate_all(t_list **stack_a, t_list **stack_b, int num);
+void		ft_swap(t_list **stack, int num, int type);
+void		ft_swap_all(t_list **stack_a, t_list **stack_b, int num);
+void		ft_push(t_list **stack1, t_list **stack2, int num, int type);
+void		ft_rotate_up(t_list **stack, int num, int type);
+void		ft_rotate_all(t_list **stack_a, t_list **stack_b, int num);
+void		ft_rrotate_down(t_list **stack, int num, int type);
+void		ft_rrotate_all(t_list **stack_a, t_list **stack_b, int num);
 //show slack
 void		show_stack_A(int *nbra, int num, char *msg);
 void		show_stack_B(int *nbrb, int num, char *msg);

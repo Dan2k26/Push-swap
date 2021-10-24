@@ -4,7 +4,6 @@ t_list	*make_lists(int *nbr, int len)
 {
 	t_list	*list;
 	t_list	*node;
-	t_list	*temp;
 	int		i;
 
 	list = NULL;
@@ -17,6 +16,5 @@ t_list	*make_lists(int *nbr, int len)
 		ft_lstadd_front(&list, node);
 		i--;
 	}
-	temp = list;
 	return (list);
 }
