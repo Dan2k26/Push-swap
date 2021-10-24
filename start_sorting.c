@@ -1,16 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   start_shorting.c                                   :+:      :+:    :+:   */
+/*   start_sorting.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dlerma-c <dlerma-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/11 15:17:32 by dlerma-c          #+#    #+#             */
-/*   Updated: 2021/10/23 20:34:57 by dlerma-c         ###   ########.fr       */
+/*   Updated: 2021/10/24 18:00:18 by dlerma-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include"push_swap.h"
+
+static t_list	*make_lists(int *nbr, int len)
+{
+	t_list	*list;
+	t_list	*node;
+	int		i;
+
+	list = NULL;
+	node = ft_lstnew(nbr[len - 1]);
+	list = node;
+	i = len - 2;
+	while (i >= 0)
+	{
+		node = ft_lstnew(nbr[i]);
+		ft_lstadd_front(&list, node);
+		i--;
+	}
+	return (list);
+}
 
 static int	*positive_numbers(int *nbr, int *n, int num)
 {
@@ -58,7 +77,7 @@ static int	*create_numbers(int argc, char **argv, int num)
 	return (nbrs);
 }
 
-int	start_shorting(int argc, char **argv, int num)
+int	start_sorting(int argc, char **argv, int num)
 {
 	int			*nbrs;
 	int			*na;
@@ -75,7 +94,7 @@ int	start_shorting(int argc, char **argv, int num)
 	show_stack_A(na, num, "NUMEROS MAPEADOS");
 	stack_a = make_lists(na, num);
 	show_stack_list_data(stack_a, num, "STACK A");
-	types_of_shorting(stack_a, num);
+	types_of_sorting(stack_a, num);
 	free(na);
 	free (nbrs);
 	return (0);

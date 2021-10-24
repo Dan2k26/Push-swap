@@ -6,7 +6,7 @@
 /*   By: dlerma-c <dlerma-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/07 18:38:41 by dlerma-c          #+#    #+#             */
-/*   Updated: 2021/10/21 17:24:35 by dlerma-c         ###   ########.fr       */
+/*   Updated: 2021/10/24 17:24:52 by dlerma-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ int	main(int argc, char **argv)
 		num = ft_check_errors(argv, argc);
 		if (num > 0)
 		{
-			num = start_shorting(argc, argv, num);
+			num = start_sorting(argc, argv, num);
 			write(1, "OK\n", 3);
 			//system("leaks -q push_swap\n");
 			return (0);

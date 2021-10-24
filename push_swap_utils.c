@@ -6,11 +6,28 @@
 /*   By: dlerma-c <dlerma-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/11 15:03:08 by dlerma-c          #+#    #+#             */
-/*   Updated: 2021/10/11 15:58:54 by dlerma-c         ###   ########.fr       */
+/*   Updated: 2021/10/24 18:03:36 by dlerma-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include"push_swap.h"
+
+int	is_sorted(t_list **stack, int num)
+{
+	t_list	*temp;
+	int i;
+
+	temp = *stack;
+	i = 0;
+	while (i < num - 1)
+	{
+		if (temp->content > temp->next->content)
+			return (1);
+		temp = temp->next;
+		i++;
+	}
+	return (0);
+}
 
 int	duplicate_numbers(int num, int *nbrs)
 {

@@ -6,7 +6,7 @@
 /*   By: dlerma-c <dlerma-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/07 18:38:50 by dlerma-c          #+#    #+#             */
-/*   Updated: 2021/10/24 02:24:36 by dlerma-c         ###   ########.fr       */
+/*   Updated: 2021/10/24 18:02:26 by dlerma-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,11 +24,12 @@
 //files .c
 int			ft_check_errors(char **argv, int argc);
 long		atoi_update(const char *str);
-int			start_shorting(int argc, char **argv, int num);
-void		types_of_shorting(t_list *stack_a, int num);
+int			start_sorting(int argc, char **argv, int num);
+void		types_of_sorting(t_list *stack_a, int num);
 //utils
 int			duplicate_numbers(int num, int *nbrs);
 char		*union_argv(char **argv, int argc);
+int			is_sorted(t_list **stack, int num);
 //rules
 void		ft_swap(t_list **stack, int num, int type);
 void		ft_swap_all(t_list **stack_a, t_list **stack_b, int num);
@@ -42,7 +43,5 @@ void		show_stack_A(int *nbra, int num, char *msg);
 void		show_stack_B(int *nbrb, int num, char *msg);
 void		show_list(t_list *lst, int num, char *msg);
 void		show_stack_list_data(t_list	*lst, int num, char *msg);
-//Make lists
-t_list		*make_lists(int *nbr, int len);
 
 #endif
