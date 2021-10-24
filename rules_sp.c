@@ -6,7 +6,7 @@
 /*   By: dlerma-c <dlerma-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/24 00:30:28 by dlerma-c          #+#    #+#             */
-/*   Updated: 2021/10/24 02:46:14 by dlerma-c         ###   ########.fr       */
+/*   Updated: 2021/10/24 04:58:33 by dlerma-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,16 +46,14 @@ void	ft_swap_all(t_list **stack_a, t_list **stack_b, int num)
 void	ft_push(t_list **stack1, t_list **stack2, int num, int type)
 {
 	t_list	*temp;
+	int		i;
 
 	(void) num;
 	(void) stack2;
 	temp = *stack1;
+	i = 0;
 	if (*stack1 == NULL || ft_lstsize(*stack1) <= 1)
 		return ;
-	if (stack2 == NULL)
-		*stack2 = temp;
-	else
-		
 	show_list(*stack2, num, "STACK B");
 	if (type == 0)
 		write(1, "pa\n", 3);

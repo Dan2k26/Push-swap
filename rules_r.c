@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   rules.c                                            :+:      :+:    :+:   */
+/*   rules_r.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dlerma-c <dlerma-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/16 01:05:45 by dlerma-c          #+#    #+#             */
-/*   Updated: 2021/10/24 00:26:26 by dlerma-c         ###   ########.fr       */
+/*   Updated: 2021/10/24 04:56:53 by dlerma-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,7 @@ void	ft_rotate_up(t_list **stack, int num, int type)
 		return ;
 	ft_lstadd_back(stack, temp);
 	*stack = temp->next;
-	temp->next = NULL;	
+	temp->next = NULL;
 	if (type == 0)
 		write(1, "ra\n", 3);
 	else

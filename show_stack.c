@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   show_stack.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: dlerma-c <dlerma-c@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/10/24 04:57:20 by dlerma-c          #+#    #+#             */
+/*   Updated: 2021/10/24 04:58:21 by dlerma-c         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include"push_swap.h"
 
 void	show_list(t_list *lst, int num, char *msg)
@@ -8,7 +20,7 @@ void	show_list(t_list *lst, int num, char *msg)
 	printf("%s\n\n", msg);
 	while (i < num)
 	{
-		printf("DIRECTION: %p\nData: %d\nNext node: %p\n\n",&lst->content, lst->content, lst->next);
+		printf("DIRECTION: %p\nData: %d\nNext node: %p\n\n", &lst->content, lst->content, lst->next);
 		lst = lst->next;
 		i++;
 	}
@@ -23,13 +35,13 @@ void	show_stack_list_data(t_list	*lst, int num, char *msg)
 	printf("LIST ||");
 	while (i < num)
 	{
-		printf(" %d",lst->content);
+		printf(" %d", lst->content);
 		lst = lst->next;
 		i++;
 	}
 	printf(" ||\n\n");
 }
- 
+
 void	show_stack_B(int *nbrb, int num, char *msg)
 {
 	int	i;
