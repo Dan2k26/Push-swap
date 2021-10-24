@@ -6,29 +6,30 @@
 /*   By: dlerma-c <dlerma-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/15 21:52:50 by dlerma-c          #+#    #+#             */
-/*   Updated: 2021/10/24 19:06:10 by dlerma-c         ###   ########.fr       */
+/*   Updated: 2021/10/24 20:42:53 by dlerma-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include"push_swap.h"
 
+static void	ft_45sort(t_list **stack, int num)
+{
+	
+}
+
 static void	ft_3sort(t_list **stack, int num)
 {
 	t_list	*temp;
 	t_list	*aux;
-	int		i;
 
 	temp = *stack;
 	aux = NULL;
-	i = 0;
 	if (is_sorted(stack, num) == 0)
 		exit(0);
 	if (temp->content > temp->next->content)
 		ft_swap(stack, num, 0);
 	if (temp->content > temp->next->next->content)
 		ft_rrotate_down(stack, num, 0);	
-	i++;
-	
 }
 
 static void	ft_2sort(t_list **stack, int num)
