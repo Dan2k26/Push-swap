@@ -6,7 +6,7 @@
 /*   By: dlerma-c <dlerma-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/24 00:30:28 by dlerma-c          #+#    #+#             */
-/*   Updated: 2021/10/24 04:58:33 by dlerma-c         ###   ########.fr       */
+/*   Updated: 2021/10/25 20:08:26 by dlerma-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,6 +54,7 @@ void	ft_push(t_list **stack1, t_list **stack2, int num, int type)
 	i = 0;
 	if (*stack1 == NULL || ft_lstsize(*stack1) <= 1)
 		return ;
+	
 	show_list(*stack2, num, "STACK B");
 	if (type == 0)
 		write(1, "pa\n", 3);
