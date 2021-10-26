@@ -6,7 +6,7 @@
 /*   By: dlerma-c <dlerma-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/24 04:57:20 by dlerma-c          #+#    #+#             */
-/*   Updated: 2021/10/25 20:11:22 by dlerma-c         ###   ########.fr       */
+/*   Updated: 2021/10/26 17:40:35 by dlerma-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ void	show_list(t_list *lst, int num, char *msg)
 	printf("%s\n\n", msg);
 	if (lst == NULL)
 		return ;
-	while (i < num)
+	while (i < num && lst != NULL)
 	{
 		printf("DIRECTION: %p\nData: %d\nNext node: %p\n\n", &lst->content, lst->content, lst->next);
 		lst = lst->next;
@@ -37,7 +37,7 @@ void	show_stack_list_data(t_list	*lst, int num, char *msg)
 	printf("LIST ||");
 	if (lst == NULL)
 		return ;
-	while (i < num)
+	while (i < num && lst != NULL)
 	{
 		printf(" %d", lst->content);
 		lst = lst->next;

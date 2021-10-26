@@ -6,7 +6,7 @@
 /*   By: dlerma-c <dlerma-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/15 21:52:50 by dlerma-c          #+#    #+#             */
-/*   Updated: 2021/10/25 20:46:21 by dlerma-c         ###   ########.fr       */
+/*   Updated: 2021/10/26 18:39:56 by dlerma-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,6 +58,9 @@ void	types_of_sorting(t_list *stack_a, int num)
 		ft_2sort(&stack_a, num);
 	if (num == 3)
 		ft_3sort(&stack_a, num);
-	//t_push(&stack_a, &stack_b, num, 0);
 	show_stack_list_data(stack_a, num, "ORDENADO");
+	ft_push(&stack_a, &stack_b, num, 0);
+	show_list(stack_b, num, "STACK BEFORE B");
+	// ft_push(&stack_a, &stack_b, num, 0);
+	// show_list(stack_b, num, "STACK AFTER B");
 }
