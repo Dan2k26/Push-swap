@@ -6,7 +6,7 @@
 /*   By: dlerma-c <dlerma-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/24 00:30:28 by dlerma-c          #+#    #+#             */
-/*   Updated: 2021/10/26 18:55:17 by dlerma-c         ###   ########.fr       */
+/*   Updated: 2021/10/26 20:18:13 by dlerma-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ void	ft_swap(t_list **stack, int num, int type)
 	temp->content = aux->content;
 	if (type == 0)
 		write(1, "sa\n", 3);
-	else
+	else if (type == 1)
 		write(1, "sb\n", 3);
 }
 
@@ -37,8 +37,8 @@ void	ft_swap_all(t_list **stack_a, t_list **stack_b, int num)
 	(void)num;
 	if (stack_b != NULL || stack_a != NULL)
 	{
-		ft_swap(stack_a, num, 0);
-		ft_swap(stack_b, num, 1);
+		ft_swap(stack_a, num, 2);
+		ft_swap(stack_b, num, 2);
 		write(1, "ss\n", 3);
 	}
 }
@@ -49,7 +49,7 @@ void	ft_push(t_list **stack1, t_list **stack2, int num, int type)
 	t_list	*temp2;
 
 	(void) num;
-	if (*stack1 == NULL || ft_lstsize(*stack1) <= 1)
+	if (*stack1 == NULL)
 		return ;
 	temp1 = *stack1;
 	if (*stack2 == NULL)
@@ -68,6 +68,6 @@ void	ft_push(t_list **stack1, t_list **stack2, int num, int type)
 	}
 	if (type == 0)
 		write(1, "pa\n", 3);
-	else
+	else if (type == 1)
 		write(1, "pb\n", 3);
 }

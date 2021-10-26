@@ -6,7 +6,7 @@
 /*   By: dlerma-c <dlerma-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/16 01:05:45 by dlerma-c          #+#    #+#             */
-/*   Updated: 2021/10/24 04:56:53 by dlerma-c         ###   ########.fr       */
+/*   Updated: 2021/10/26 20:18:47 by dlerma-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ void	ft_rrotate_down(t_list **stack, int num, int type)
 	stop->next = NULL;
 	if (type == 0)
 		write(1, "rra\n", 4);
-	else
+	else if (type == 1)
 		write(1, "rrb\n", 4);
 }
 
@@ -58,7 +58,7 @@ void	ft_rotate_up(t_list **stack, int num, int type)
 	temp->next = NULL;
 	if (type == 0)
 		write(1, "ra\n", 3);
-	else
+	else if (type == 1)
 		write(1, "rb\n", 3);
 }
 
@@ -67,8 +67,8 @@ void	ft_rotate_all(t_list **stack_a, t_list **stack_b, int num)
 	(void)num;
 	if (stack_b != NULL || stack_a != NULL)
 	{
-		ft_rotate_up(stack_a, num, 0);
-		ft_rotate_up(stack_b, num, 1);
+		ft_rotate_up(stack_a, num, 2);
+		ft_rotate_up(stack_b, num, 2);
 		write(1, "rr\n", 3);
 	}
 }

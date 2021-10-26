@@ -6,7 +6,7 @@
 /*   By: dlerma-c <dlerma-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/11 15:03:08 by dlerma-c          #+#    #+#             */
-/*   Updated: 2021/10/24 18:03:36 by dlerma-c         ###   ########.fr       */
+/*   Updated: 2021/10/26 21:12:14 by dlerma-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ int	is_sorted(t_list **stack, int num)
 
 	temp = *stack;
 	i = 0;
-	while (i < num - 1)
+	while (i < num - 1 && temp->next != NULL)
 	{
 		if (temp->content > temp->next->content)
 			return (1);
