@@ -6,7 +6,7 @@
 /*   By: dlerma-c <dlerma-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/11 15:17:32 by dlerma-c          #+#    #+#             */
-/*   Updated: 2021/10/24 18:00:18 by dlerma-c         ###   ########.fr       */
+/*   Updated: 2021/10/27 17:28:34 by dlerma-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,14 +86,13 @@ int	start_sorting(int argc, char **argv, int num)
 
 	i = 0;
 	nbrs = create_numbers(argc, argv, num);
-	show_stack_A(nbrs, num, "NUMEROS USUARIO");
+	//show_stack_A(nbrs, num, "NUMEROS USUARIO");
 	na = ft_calloc(sizeof(int), num + 1);
 	if (na == NULL)
 		return (0);
 	na = positive_numbers(nbrs, na, num);
-	show_stack_A(na, num, "NUMEROS MAPEADOS");
 	stack_a = make_lists(na, num);
-	show_stack_list_data(stack_a, num, "STACK A");
+	//show_stack_list_data(stack_a, num, "STACK A MAPEADO");
 	types_of_sorting(stack_a, num);
 	free(na);
 	free (nbrs);

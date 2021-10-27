@@ -6,7 +6,7 @@
 /*   By: dlerma-c <dlerma-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/15 21:52:50 by dlerma-c          #+#    #+#             */
-/*   Updated: 2021/10/26 21:47:59 by dlerma-c         ###   ########.fr       */
+/*   Updated: 2021/10/27 17:55:05 by dlerma-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,7 @@ static void	ft_45sort(t_list **stack_a, t_list **stack_b, int num)
 			ft_rotate_up(stack_a, num, 0);
 	}
 	if (is_sorted(stack_b, num) == 0)
-		ft_swap(stack_b, num, 0);
+		ft_swap(stack_b, num, 1);
 	if (ft_lstsize(*stack_a) == 3 && is_sorted(stack_a, num) != 0)
 		ft_3sort(stack_a, num);
 	if (ft_lstsize(*stack_a) == 2 && is_sorted(stack_a, num) != 0)
@@ -77,6 +77,6 @@ void	types_of_sorting(t_list *stack_a, int num)
 		ft_3sort(&stack_a, num);
 	if (num == 4 || num == 5)
 		ft_45sort(&stack_a, &stack_b, num);
-	show_stack_list_data(stack_a, num, "ORDENADO A");
-	show_stack_list_data(stack_b, num, "ORDENADO B");
+	//show_stack_list_data(stack_a, num, "ORDENADO A");
+	//show_stack_list_data(stack_b, num, "ORDENADO B");
 }
