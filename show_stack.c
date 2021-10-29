@@ -6,7 +6,7 @@
 /*   By: dlerma-c <dlerma-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/24 04:57:20 by dlerma-c          #+#    #+#             */
-/*   Updated: 2021/10/26 17:40:35 by dlerma-c         ###   ########.fr       */
+/*   Updated: 2021/10/29 21:38:01 by dlerma-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ void	show_stack_list_data(t_list	*lst, int num, char *msg)
 		lst = lst->next;
 		i++;
 	}
-	printf(" ||\n\n");
+	printf(" || --> NULL\n\n");
 }
 
 void	show_stack_B(int *nbrb, int num, char *msg)

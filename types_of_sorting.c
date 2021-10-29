@@ -6,11 +6,13 @@
 /*   By: dlerma-c <dlerma-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/15 21:52:50 by dlerma-c          #+#    #+#             */
-/*   Updated: 2021/10/27 19:04:47 by dlerma-c         ###   ########.fr       */
+/*   Updated: 2021/10/29 23:50:36 by dlerma-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include"push_swap.h"
+
+
 
 static void	ft_2sort(t_list **stack, int num)
 {
@@ -66,6 +68,41 @@ static void	ft_45sort(t_list **stack_a, t_list **stack_b, int num)
 	ft_push(stack_b, stack_a, num, 0);
 }
 
+static void		ft_6radix(t_list **stack_a, t_list **stack_b, int num)
+{
+	int		i;
+	int		pos;
+	t_list	*temp;
+
+	i = 0;
+	pos = 0;
+	temp = *stack_a;
+	if (is_sorted(stack_a, num) == 0)
+		exit(0);
+	while(is_sorted(stack_a, num) != 0)
+	{
+		if (ft_binary(temp->content, pos) == 1)
+		{
+			temp = temp->next;
+			ft_push(stack_a, stack_b, num, 1);
+		}
+		else
+		{
+			temp = temp->next;
+			ft_rotate_up(stack_a, num, 0);
+		}
+		if (i == num - 1)
+		{
+			while (ft_lstsize(*stack_b) != 0)
+				ft_push(stack_b, stack_a, num, 0);	
+			temp = *stack_a;
+			pos++;
+			i = -1;
+		}
+		i++;
+	}
+}
+
 void	types_of_sorting(t_list *stack_a, int num)
 {
 	t_list	*stack_b;
@@ -78,7 +115,5 @@ void	types_of_sorting(t_list *stack_a, int num)
 	if (num == 4 || num == 5)
 		ft_45sort(&stack_a, &stack_b, num);
 	if (num >= 6)
-		num2binary(&stack_a, num);
-	//show_stack_list_data(stack_a, num, "ORDENADO A");
-	//show_stack_list_data(stack_b, num, "ORDENADO B");
+		ft_6radix(&stack_a, &stack_b, num);
 }
