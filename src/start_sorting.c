@@ -6,11 +6,11 @@
 /*   By: dlerma-c <dlerma-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/11 15:17:32 by dlerma-c          #+#    #+#             */
-/*   Updated: 2021/10/27 17:28:34 by dlerma-c         ###   ########.fr       */
+/*   Updated: 2021/10/30 19:30:28 by dlerma-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include"push_swap.h"
+#include <push_swap.h>
 
 static t_list	*make_lists(int *nbr, int len)
 {

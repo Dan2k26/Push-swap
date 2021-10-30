@@ -6,11 +6,11 @@
 /*   By: dlerma-c <dlerma-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/24 00:30:28 by dlerma-c          #+#    #+#             */
-/*   Updated: 2021/10/29 22:45:58 by dlerma-c         ###   ########.fr       */
+/*   Updated: 2021/10/30 18:33:58 by dlerma-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include"push_swap.h"
+#include <push_swap.h>
 
 void	ft_swap(t_list **stack, int num, int type)
 {

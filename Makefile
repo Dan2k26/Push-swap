@@ -1,36 +1,83 @@
+######################################################################
+#                                NAME                                #
+######################################################################
+
 NAME = push_swap
 
-SRCS = ft_pushswap.c check_errors.c atoi_update.c start_sorting.c \
-		push_swap_utils.c show_stack.c types_of_sorting.c rules_r.c \
-		rules_sp.c
-#Direccion de la Libft
-FILE_DIR = libft
-
-OBJS = $(SRCS:.c=.o)
+######################################################################
+#                              COMPILER                              #
+######################################################################
 
 CC = gcc
 
-CFLAGS = -Wall -Werror -Wextra -g3 #-fsanitize=address 
+CFLAGS = -Wall -Werror -Wextra -g3
+
+# ruta .h
+CFLAGS += -I $(INC_PATH) -I $(LFT_DIR)
+
+DEV=0
+ifeq ($(DEV), 1)
+	CFLAGS += -fsanitize=address
+endif
+
+######################################################################
+#                                PATHS                               #
+######################################################################
+
+INC_PATH = inc
+SRC_PATH = src
+OBJ_PATH = obj
+
+######################################################################
+#                                SRCS                                #
+######################################################################
+
+SRCS = main.c check_errors.c atoi_update.c start_sorting.c \
+		push_swap_utils.c show_stack.c types_of_sorting.c rules_r.c \
+		rules_sp.c
+
+OBJS_NAME = $(SRCS:%.c=%.o)
+
+OBJS = $(addprefix $(OBJ_PATH)/, $(OBJS_NAME))
+
+######################################################################
+#                                LIBS                                #
+######################################################################
+
+LFT_DIR = libft
+
+# flags librerias
+# ruta .a
+LDFLAGS = -L $(LFT_DIR)
+
+# nombre lib
+LDLIBS = -lft
+
+######################################################################
+#                                RULES                               #
+######################################################################
+
+.PHONY: all fclean clean re
 
 all: $(NAME)
 
 $(NAME): $(OBJS)
-#libft
-	cd $(FILE_DIR) && $(MAKE) && $(MAKE) bonus
-#push swap
-	$(CC) $(CFLAGS) $(OBJS) $(FILE_DIR)/libft.a -o $(NAME)
+	make -sC $(LFT_DIR)
+	$(CC) $^ -o $@ $(CFLAGS) $(LDFLAGS) $(LDLIBS)
 
-%.o : %.c push_swap.h $(FILE_DIR)/libft.h
-	$(CC) $(CFLAGS) -c $< -o $@ 
+$(OBJ_PATH)/%.o: $(SRC_PATH)/%.c
+	$(CC) $(CFLAGS) -c $< -o $@
+
+$(OBJS): | $(OBJ_PATH)
+
+$(OBJ_PATH):
+	mkdir -p $(OBJ_PATH) 2> /dev/null
 
 clean:
-	cd $(FILE_DIR) && $(MAKE) clean
-	rm -f $(OBJS)
+	make fclean -sC $(LFT_DIR)
+	rm -rf $(OBJ_PATH)
 
 fclean: clean
-	cd $(FILE_DIR) && $(MAKE) fclean
-	rm -f $(NAME)
+	rm -rf $(NAME)
 
 re:	fclean all
-
-PHONY.: all fclean clean re

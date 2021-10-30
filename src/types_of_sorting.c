@@ -6,11 +6,11 @@
 /*   By: dlerma-c <dlerma-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/15 21:52:50 by dlerma-c          #+#    #+#             */
-/*   Updated: 2021/10/29 23:50:36 by dlerma-c         ###   ########.fr       */
+/*   Updated: 2021/10/30 20:13:31 by dlerma-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include"push_swap.h"
+#include <push_swap.h>
 
 
 
@@ -50,7 +50,9 @@ static void	ft_45sort(t_list **stack_a, t_list **stack_b, int num)
 {
 	t_list	*temp;
 
-	while (ft_lstsize(*stack_b) != 2)
+	if (is_sorted(stack_a, num) == 0)
+		exit(0);
+	while (ft_lstsize(*stack_b) < 2)
 	{
 		temp = *stack_a;
 		if (temp->content == 1 || temp->content == 2)
@@ -62,7 +64,7 @@ static void	ft_45sort(t_list **stack_a, t_list **stack_b, int num)
 		ft_swap(stack_b, num, 1);
 	if (ft_lstsize(*stack_a) == 3 && is_sorted(stack_a, num) != 0)
 		ft_3sort(stack_a, num);
-	if (ft_lstsize(*stack_a) == 2 && is_sorted(stack_a, num) != 0)
+	else if (ft_lstsize(*stack_a) == 2 && is_sorted(stack_a, num) != 0)
 		ft_2sort(stack_a, num);
 	ft_push(stack_b, stack_a, num, 0);
 	ft_push(stack_b, stack_a, num, 0);
@@ -79,7 +81,7 @@ static void		ft_6radix(t_list **stack_a, t_list **stack_b, int num)
 	temp = *stack_a;
 	if (is_sorted(stack_a, num) == 0)
 		exit(0);
-	while(is_sorted(stack_a, num) != 0)
+	while(is_sorted(stack_a, num) != 0 || ft_lstsize(*stack_a) != num)
 	{
 		if (ft_binary(temp->content, pos) == 1)
 		{

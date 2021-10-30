@@ -6,11 +6,11 @@
 /*   By: dlerma-c <dlerma-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/24 04:57:20 by dlerma-c          #+#    #+#             */
-/*   Updated: 2021/10/29 21:38:01 by dlerma-c         ###   ########.fr       */
+/*   Updated: 2021/10/30 18:34:10 by dlerma-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include"push_swap.h"
+#include <push_swap.h>
 
 void	show_list(t_list *lst, int num, char *msg)
 {

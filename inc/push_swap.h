@@ -6,7 +6,7 @@
 /*   By: dlerma-c <dlerma-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/07 18:38:50 by dlerma-c          #+#    #+#             */
-/*   Updated: 2021/10/29 22:17:59 by dlerma-c         ###   ########.fr       */
+/*   Updated: 2021/10/30 19:34:38 by dlerma-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,11 +17,12 @@
 # define MAX_INT 2147483647
 # define MIN_INT -2147483648
 
-# include<stdio.h>
-# include<unistd.h>
-# include"libft/libft.h"
+# include <stdio.h>
+# include <unistd.h>
+# include <libft.h>
 
 //files .c
+
 int			ft_check_errors(char **argv, int argc);
 long		atoi_update(const char *str);
 int			start_sorting(int argc, char **argv, int num);

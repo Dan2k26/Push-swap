@@ -6,11 +6,11 @@
 /*   By: dlerma-c <dlerma-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/10 21:41:14 by dlerma-c          #+#    #+#             */
-/*   Updated: 2021/10/11 15:16:42 by dlerma-c         ###   ########.fr       */
+/*   Updated: 2021/10/30 18:32:46 by dlerma-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include"push_swap.h"
+#include <push_swap.h>
 
 static int	check_space_sign(const char *str, int *sign)
 {

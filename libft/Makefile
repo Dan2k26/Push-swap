@@ -6,7 +6,7 @@
 #    By: dlerma-c <dlerma-c@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/08/07 13:40:36 by dlerma-c          #+#    #+#              #
-#    Updated: 2021/10/24 02:38:49 by dlerma-c         ###   ########.fr        #
+#    Updated: 2021/10/30 18:23:41 by dlerma-c         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,50 +21,32 @@ SRC = ft_atoi.c ft_bzero.c ft_calloc.c ft_isalnum.c\
 		ft_toupper.c ft_strtrim.c ft_split.c ft_itoa.c \
 		ft_putchar_fd.c ft_putstr_fd.c ft_strmapi.c \
 		ft_striteri.c ft_putendl_fd.c ft_putnbr_fd.c \
-		ft_free_malloc.c 
-
-OBJS = $(SRC:.c=.o)
-
-SRCBONUS= ft_lstnew_bonus.c ft_lstadd_front_bonus.c ft_lstlast_bonus.c \
+		ft_free_malloc.c ft_lstnew_bonus.c ft_lstadd_front_bonus.c ft_lstlast_bonus.c \
 		ft_lstsize_bonus.c ft_lstadd_back_bonus.c ft_lstdelone_bonus.c
 
-OBJSBONUS= $(SRCBONUS:.c=.o)
+OBJS = $(SRC:%.c=%.o)
 
-CFLAGS = -Wall -Wextra -Werror -pedantic 
+CFLAGS = -Wall -Wextra -Werror -pedantic
 
 all: $(NAME)
 
 $(NAME): $(OBJS)
-	@ar rcs $(NAME) $(OBJS)
+	@ar -rcs $(NAME) $(OBJS)
 	@echo "\033[1;105mLibft done\033[0m"
 
-
-%.o : %.c libft.h
+%.o: %.c libft.h
 	@gcc $(CFLAGS) -c $< -o $@
 
-bonus: $(OBJSBONUS) libft.h
-	@ar rcs $(NAME) $(OBJSBONUS)
-	
-run: all
-	@tput setaf 199; echo "MAKEFILE OF LIBFT"
-	@gcc $(CFLAGS) libft.a -g3 -o a.out  
-	./a.out
-
-run_bonus: bonus
-	@tput setaf 191; echo "MAKEFILE OF LIBFT BONUS"
-	@gcc $(CFLAGS) libft.a -g3 -o a.out  
-	./a.out
-	
 normi:
 	@norminette $(SRC) $(SRCBONUS) ./libft.h
 	@tput setaf 208; echo "Norminette"
 
 clean:
-	@rm -f $(OBJS) $(OBJSBONUS)
+	@rm -rf $(OBJS) $(OBJSBONUS)
 
 fclean: clean
-	@rm -f $(NAME)
-	
+	@rm -rf $(NAME)
+
 re:	fclean all
 
-PHONY.: clean all fclean re bonus
+.PHONY: clean all fclean re

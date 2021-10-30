@@ -6,11 +6,11 @@
 /*   By: dlerma-c <dlerma-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/07 18:39:01 by dlerma-c          #+#    #+#             */
-/*   Updated: 2021/10/12 17:48:30 by dlerma-c         ###   ########.fr       */
+/*   Updated: 2021/10/30 18:32:59 by dlerma-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include"push_swap.h"
+#include <push_swap.h>
 
 static int	check_numbers(char **split)
 {
