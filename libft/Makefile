@@ -6,7 +6,7 @@
 #    By: dlerma-c <dlerma-c@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/08/07 13:40:36 by dlerma-c          #+#    #+#              #
-#    Updated: 2021/10/30 18:23:41 by dlerma-c         ###   ########.fr        #
+#    Updated: 2021/10/31 03:55:57 by dlerma-c         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,7 +22,7 @@ SRC = ft_atoi.c ft_bzero.c ft_calloc.c ft_isalnum.c\
 		ft_putchar_fd.c ft_putstr_fd.c ft_strmapi.c \
 		ft_striteri.c ft_putendl_fd.c ft_putnbr_fd.c \
 		ft_free_malloc.c ft_lstnew_bonus.c ft_lstadd_front_bonus.c ft_lstlast_bonus.c \
-		ft_lstsize_bonus.c ft_lstadd_back_bonus.c ft_lstdelone_bonus.c
+		ft_lstsize_bonus.c ft_lstadd_back_bonus.c ft_lstdelone_bonus.c ft_lstclear_bonus.c
 
 OBJS = $(SRC:%.c=%.o)
 

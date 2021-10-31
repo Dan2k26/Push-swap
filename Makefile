@@ -11,7 +11,6 @@ NAME = push_swap
 CC = gcc
 
 CFLAGS = -Wall -Werror -Wextra -g3
-
 # ruta .h
 CFLAGS += -I $(INC_PATH) -I $(LFT_DIR)
 
@@ -45,12 +44,9 @@ OBJS = $(addprefix $(OBJ_PATH)/, $(OBJS_NAME))
 ######################################################################
 
 LFT_DIR = libft
-
-# flags librerias
-# ruta .a
+# .a
 LDFLAGS = -L $(LFT_DIR)
-
-# nombre lib
+# lib name
 LDLIBS = -lft
 
 ######################################################################

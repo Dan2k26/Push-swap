@@ -6,17 +6,17 @@
 /*   By: dlerma-c <dlerma-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/24 16:57:41 by dlerma-c          #+#    #+#             */
-/*   Updated: 2021/10/24 02:39:29 by dlerma-c         ###   ########.fr       */
+/*   Updated: 2021/10/31 05:08:03 by dlerma-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include"libft.h"
 
-void	ft_lstdelone(t_list *lst, void (*del)(int))
+void	ft_lstdelone(t_list *lst, void (*del)(void *))
 {
 	if (lst)
 	{
-		(*del)(lst->content);
-		free(lst);
+		del (&lst->content);
+		
 	}
 }

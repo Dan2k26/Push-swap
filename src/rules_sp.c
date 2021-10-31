@@ -6,7 +6,7 @@
 /*   By: dlerma-c <dlerma-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/24 00:30:28 by dlerma-c          #+#    #+#             */
-/*   Updated: 2021/10/30 18:33:58 by dlerma-c         ###   ########.fr       */
+/*   Updated: 2021/10/31 05:10:49 by dlerma-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,7 @@ void	ft_swap(t_list **stack, int num, int type)
 		write(1, "sa\n", 3);
 	else if (type == 1)
 		write(1, "sb\n", 3);
+	ft_lstclear(&aux, free);
 }
 
 void	ft_swap_all(t_list **stack_a, t_list **stack_b, int num)

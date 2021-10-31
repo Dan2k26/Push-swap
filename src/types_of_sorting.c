@@ -6,7 +6,7 @@
 /*   By: dlerma-c <dlerma-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/15 21:52:50 by dlerma-c          #+#    #+#             */
-/*   Updated: 2021/10/30 20:13:31 by dlerma-c         ###   ########.fr       */
+/*   Updated: 2021/10/31 05:09:25 by dlerma-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -118,4 +118,6 @@ void	types_of_sorting(t_list *stack_a, int num)
 		ft_45sort(&stack_a, &stack_b, num);
 	if (num >= 6)
 		ft_6radix(&stack_a, &stack_b, num);
+	ft_lstclear(&stack_a, free);
+	ft_lstclear(&stack_b, free);
 }

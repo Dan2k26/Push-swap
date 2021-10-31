@@ -6,22 +6,16 @@
 /*   By: dlerma-c <dlerma-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/07 18:38:41 by dlerma-c          #+#    #+#             */
-/*   Updated: 2021/10/30 19:56:48 by dlerma-c         ###   ########.fr       */
+/*   Updated: 2021/10/31 05:28:04 by dlerma-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <push_swap.h>
 
-/*void leaks(void)
-{
-	system("leaks -q push_swap");
-}*/
-
 int	main(int argc, char **argv)
 {
 	int	num;
 
-	//atexit(leaks);
 	if (argc > 1)
 	{
 		num = ft_check_errors(argv, argc);
