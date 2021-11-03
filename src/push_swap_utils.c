@@ -6,7 +6,7 @@
 /*   By: dlerma-c <dlerma-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/11 15:03:08 by dlerma-c          #+#    #+#             */
-/*   Updated: 2021/10/30 20:08:28 by dlerma-c         ###   ########.fr       */
+/*   Updated: 2021/10/31 05:49:26 by dlerma-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,8 +26,6 @@ int	is_sorted(t_list **stack, int num)
 		temp = temp->next;
 		i++;
 	}
-	//if (i < num - 1)
-	//	return (1);	
 	return (0);
 }
 
@@ -40,6 +38,23 @@ int	ft_binary(int content, int bit)
 		return (0);
 	else
 		return (1);
+}
+
+void	ft_check_binary(int num, int *pos, t_list **sa, t_list **sb)
+{
+	t_list	*temp;
+
+	temp = *sa;
+	if (ft_binary(temp->content, *pos) == 1)
+	{
+		temp = temp->next;
+		ft_push(sa, sb, num, 1);
+	}
+	else
+	{
+		temp = temp->next;
+		ft_rotate_up(sa, num, 0);
+	}
 }
 
 int	duplicate_numbers(int num, int *nbrs)

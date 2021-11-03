@@ -6,7 +6,7 @@
 /*   By: dlerma-c <dlerma-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/24 16:57:41 by dlerma-c          #+#    #+#             */
-/*   Updated: 2021/10/31 05:08:03 by dlerma-c         ###   ########.fr       */
+/*   Updated: 2021/10/31 05:36:34 by dlerma-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,5 @@
 void	ft_lstdelone(t_list *lst, void (*del)(void *))
 {
 	if (lst)
-	{
 		del (&lst->content);
-		
-	}
 }
