@@ -58,3 +58,4 @@ dkms.conf
 show_stack.c
 errors_strtol
 checker_Mac
+.vscode
