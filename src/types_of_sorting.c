@@ -26,10 +26,8 @@ static void	ft_2sort(t_list **stack, int num)
 static void	ft_3sort(t_list **stack, int num)
 {
 	t_list	*temp;
-	t_list	*aux;
 
 	temp = *stack;
-	aux = NULL;
 	if (is_sorted(stack, num) == 0)
 		exit(0);
 	if (temp->content > temp->next->content)
@@ -72,11 +70,9 @@ static void	ft_6radix(t_list **stack_a, t_list **stack_b, int num)
 {
 	int		i;
 	int		pos;
-	t_list	*temp;
 
 	i = 0;
 	pos = 0;
-	temp = *stack_a;
 	if (is_sorted(stack_a, num) == 0)
 		exit(0);
 	while (is_sorted(stack_a, num) != 0 || ft_lstsize(*stack_a) != num)
@@ -86,7 +82,6 @@ static void	ft_6radix(t_list **stack_a, t_list **stack_b, int num)
 		{
 			while (ft_lstsize(*stack_b) != 0)
 				ft_push(stack_b, stack_a, num, 0);
-			temp = *stack_a;
 			pos++;
 			i = -1;
 		}

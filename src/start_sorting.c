@@ -31,7 +31,7 @@ static t_list	*make_lists(int *nbr, int len)
 	return (list);
 }
 
-static int	*positive_numbers(int *nbr, int *n, int num)
+static void	positive_numbers(int *nbr, int *n, int num)
 {
 	int	i;
 	int	y;
@@ -51,7 +51,6 @@ static int	*positive_numbers(int *nbr, int *n, int num)
 		n[i] = cont;
 		i++;
 	}
-	return (n);
 }
 
 static int	*create_numbers(int argc, char **argv, int num)
@@ -82,14 +81,12 @@ int	start_sorting(int argc, char **argv, int num)
 	int			*nbrs;
 	int			*na;
 	t_list		*stack_a;
-	int			i;
 
-	i = 0;
 	nbrs = create_numbers(argc, argv, num);
 	na = ft_calloc(sizeof(int), num + 1);
 	if (na == NULL)
 		return (0);
-	na = positive_numbers(nbrs, na, num);
+	positive_numbers(nbrs, na, num);
 	stack_a = make_lists(na, num);
 	types_of_sorting(stack_a, num);
 	free(na);

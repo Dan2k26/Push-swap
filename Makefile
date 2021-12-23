@@ -33,7 +33,7 @@ OBJ_PATH = obj
 
 SRCS = main.c check_errors.c atoi_update.c start_sorting.c \
 		push_swap_utils.c types_of_sorting.c rules_r.c \
-		rules_sp.c
+		rules_sp.c show_stack.c
 
 OBJS_NAME = $(SRCS:%.c=%.o)
 

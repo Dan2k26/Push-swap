@@ -42,4 +42,7 @@ void		ft_rotate_all(t_list **stack_a, t_list **stack_b, int num);
 void		ft_rrotate_down(t_list **stack, int num, int type);
 void		ft_rrotate_all(t_list **stack_a, t_list **stack_b, int num);
 
+void		show_stack_A(int *nbra, int num, char *msg);
+
+
 #endif

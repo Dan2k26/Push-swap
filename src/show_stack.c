@@ -44,7 +44,7 @@ void	show_stack_list_data(t_list	*lst, int num, char *msg)
 		i++;
 	}
 	printf(" || --> NULL\n\n");
-}ewgweg
+}
 
 void	show_stack_B(int *nbrb, int num, char *msg)
 {
